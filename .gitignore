@@ -50,3 +50,10 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# Changelog
+#changelog*.md # A décommenter pour ignorer les fichiers changelog
+#current_changelog.md A décommenter pour ignorer le fichier current_changelog
+
+# Idea To Implement
+ideaToImplement.txt
