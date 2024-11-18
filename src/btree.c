@@ -165,4 +165,25 @@ ExecuteResult execute_delete(Statement* statement, Database* db) {
     return EXECUTE_SUCCESS;
 }
 
+// Fonction pour exécuter une sélection
+ExecuteResult execute_select(Statement* statement, Database* db) {
+    if (db->tables == NULL) {
+        return EXECUTE_NOT_FOUND;
+    }
+
+    Node* current = db->tables->root;
+    uint32_t id_to_select = statement->row_to_insert.id; // Utiliser l'id de la ligne à insérer comme condition
+
+    Node* result = search(current, id_to_select);
+    if (result == NULL) {
+        return EXECUTE_NOT_FOUND;
+    }
+
+    // Afficher les résultats
+    printf("Résultat de la sélection :\n");
+    printf("ID: %d, Utilisateur: %s, Email: %s\n", result->data.id, result->data.username, result->data.email);
+    
+    return EXECUTE_SUCCESS;
+}
+
 #endif

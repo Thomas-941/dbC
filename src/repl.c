@@ -545,4 +545,18 @@ void add_table_with_columns(Table** tables) {
 
 }
 
+// Fonction pour exécuter la sélection de la base de données
+ExecuteResult execute_use(Statement* statement, Database* db) {
+    Database* target_db = create_database(statement->db_name); // Créer ou charger la base de données
+
+    if (target_db == NULL) {
+        return EXECUTE_NOT_FOUND;
+    }
+
+    current_db = target_db;
+    printf("Base de données sélectionnée : %s\n", current_db->name);
+    
+    return EXECUTE_SUCCESS;
+}
+
 #endif
