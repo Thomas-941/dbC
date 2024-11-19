@@ -3,6 +3,7 @@
 #include "headers/repl.h"
 #include "headers/table.h"
 
+// Fonction pour libérer la mémoire des noeuds de l'arbre binaire
 void free_nodes(Node* node) {
 
     if (node == NULL) {
@@ -15,6 +16,7 @@ void free_nodes(Node* node) {
 
 }
 
+// Fonction pour libérer la mémoire d'une table
 void free_table(Table* table) {
 
     if (table == NULL) {
@@ -26,21 +28,32 @@ void free_table(Table* table) {
 
 }
 
-int main(void/*int argc, char* argv[]*/) {
+// Fonction pour libérer la mémoire d'une base de données
+void free_database(Database* db) {
 
-    Table* table = new_table();
-
-    if (table == NULL) {
-
-        fprintf(stderr, "Erreur: Impossible de créer une nouvelle table.\n");
-
-        return 1;
-
+    if (db == NULL) {
+        return;
     }
 
-    repl(table);
+    Table* current_table = db->tables;
+    while (current_table != NULL) {
+        Table* next_table = current_table->next;
+        free_table(current_table);
+        current_table = next_table;
+    }
 
-    free_table(table);
+    free(db);
+
+}
+
+int main(void) {
+
+    // Initialisation de la base de données à Null
+    Database* db = NULL;
+
+    repl(db); // Passez la base de données à la fonction repl
+
+    free_database(db); // Libération de la mémoire
 
     return 0;
     
