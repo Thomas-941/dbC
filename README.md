@@ -11,7 +11,6 @@ L'objectif de ce TP est de créer un système de base de données en C et de le 
 - [Changelog](#changelog)
 - [Historique des Changelogs](#historique-des-changelogs)
 - [Structure du Projet](#structure-du-projet)
-- [Aide et Contribuer](#aide-et-contribuer)
 
 ---
 
