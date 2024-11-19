@@ -18,7 +18,7 @@ L'objectif de ce TP est de créer un système de base de données en C et de le 
 ## Auteur et Version
 
 **Auteur :** Thomas GRUNDSZTEJN - Defl3ct  
-**Version :** 1.3
+**Version :** 1.3 (2024-10-06)
 
 ---
 
