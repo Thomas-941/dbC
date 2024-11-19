@@ -107,7 +107,3 @@ Le projet est structuré comme suit :
 - `README.md` : Ce fichier, qui fournit des informations sur le projet.
 
 ---
-
-## Aide et Contribuer
-
-Pour toute question ou contribution, n'hésitez pas à contacter l'auteur ou à soumettre une demande de tirage.
